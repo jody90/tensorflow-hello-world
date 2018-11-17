@@ -14,4 +14,6 @@ matplotlib = "*"
 
 
 [scripts]
-start = "python main.py"
+start-new = "python main.py -a new -o myModel.h5"
+start-optimize = "python main.py -a optimize -i myModel.h5 -o myModel.h5"
+start-use = "python main.py -a use"
