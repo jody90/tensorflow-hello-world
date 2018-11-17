@@ -49,12 +49,12 @@ def main(argv) :
         myModel.save(outputfile)
 
     elif action == "optimize" :
-        myModel = loadModel(inpufile)
+        myModel = loadModel(inputfile)
         myModel.fit(train_images, train_labels, epochs=5)
         myModel.save(outputfile)
 
     elif action == "use" :
-        myModel = loadModel(inpufile)
+        myModel = loadModel(inputfile)
 
 def getModel() :
 
