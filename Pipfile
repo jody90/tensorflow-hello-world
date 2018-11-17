@@ -9,11 +9,12 @@ python_version = ">=3.5.0"
 [packages]
 tensorflow = "*"
 matplotlib = "*"
+pydot = "*"
+graphviz = "*"
 
 [dev-packages]
-
 
 [scripts]
 start-new = "python main.py -a new -o myModel.h5"
 start-optimize = "python main.py -a optimize -i myModel.h5 -o myModel.h5"
-start-use = "python main.py -a use"
+start-use = "python main.py -a use -i myModel.h5"

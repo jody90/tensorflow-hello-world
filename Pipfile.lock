@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "189cc85165a50194220f922e655e34870ec20227b0217fe1a2952e84f679b644"
+            "sha256": "91651fb6262ec75dec8f68fa574e2cdd562a4935bc01e04021ef942049ea7fa7"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -41,6 +41,14 @@
                 "sha256:7068908321ecd2774f145193c4b34a11305bd104b4551b09273dfd1d6a374930"
             ],
             "version": "==0.2.0"
+        },
+        "graphviz": {
+            "hashes": [
+                "sha256:0e1744a45b0d707bc44f99c7b8e5f25dc22cf96b6aaf2432ac308ed9822a9cb6",
+                "sha256:d311be4fddfe832a56986ac5e1d6e8715d7fcb0208560da79d1bb0f72abef41f"
+            ],
+            "index": "pypi",
+            "version": "==0.10.1"
         },
         "grpcio": {
             "hashes": [
@@ -240,6 +248,13 @@
                 "sha256:fcfc907746ec22716f05ea96b7f41597dfe1a1c088f861efb8a0d4f4196a6f10"
             ],
             "version": "==3.6.1"
+        },
+        "pydot": {
+            "hashes": [
+                "sha256:92d2e2d15531d00710f2d6fb5540d2acabc5399d464f2f20d5d21073af241eb6"
+            ],
+            "index": "pypi",
+            "version": "==1.2.4"
         },
         "pyparsing": {
             "hashes": [
