@@ -8,6 +8,8 @@ import matplotlib.pyplot as plt
 
 import sys, getopt
 
+from scipy import misc
+
 class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 
 fashion_mnist = keras.datasets.fashion_mnist
@@ -82,8 +84,35 @@ def main(argv) :
         model = loadModel(inputfile)
 
         img = test_images[4]
+
         img = (np.expand_dims(img,0))
+
         predictions_single = model.predict(img)
+
+        plot_value_array(4, predictions_single, test_labels)
+        _ = plt.xticks(range(10), class_names, rotation=45)
+        plt.show()
+
+    elif action == "predict-custom" :
+
+        model = loadModel(inputfile)
+
+        customImage = misc.imread('sneaker_875.jpg', True)
+        # customImage = misc.imread('sneaker_28.jpg', True)
+        customImage = customImage / 255.0
+
+
+        # img = test_images[4]
+
+        # print(img.shape)
+        # print(img.dtype)
+
+        img = (np.expand_dims(customImage,0))
+
+
+        
+        predictions_single = model.predict(img)
+
         plot_value_array(0, predictions_single, test_labels)
         _ = plt.xticks(range(10), class_names, rotation=45)
         plt.show()
@@ -125,7 +154,9 @@ def plot_image(i, predictions_array, true_label, img):
                                 color=color)
 
 def plot_value_array(i, predictions_array, true_label):
-  predictions_array, true_label = predictions_array[i], true_label[i]
+  predictions_array = predictions_array[0]
+  true_label = true_label[i]
+
   plt.grid(False)
   plt.xticks([])
   plt.yticks([])

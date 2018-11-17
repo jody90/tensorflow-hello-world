@@ -9,6 +9,9 @@ python_version = ">=3.5.0"
 [packages]
 tensorflow = "*"
 matplotlib = "*"
+pillow = "*"
+opencv-python = "*"
+scipy = "*"
 
 [dev-packages]
 
@@ -18,3 +21,4 @@ start-optimize = "python main.py -a optimize -i myModel.h5 -o myModel.h5"
 start-use = "python main.py -a use -i myModel.h5"
 start-predict = "python main.py -a predict -i myModel.h5"
 start-predict-single = "python main.py -a predict-single -i myModel.h5"
+start-predict-custom = "python main.py -a predict-custom -i myModel.h5"
