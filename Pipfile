@@ -9,8 +9,6 @@ python_version = ">=3.5.0"
 [packages]
 tensorflow = "*"
 matplotlib = "*"
-pydot = "*"
-graphviz = "*"
 
 [dev-packages]
 

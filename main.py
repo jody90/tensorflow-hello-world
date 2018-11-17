@@ -6,8 +6,6 @@ from tensorflow import keras
 import numpy as np
 import matplotlib.pyplot as plt
 
-from tensorflow.keras.utils import plot_model
-
 import sys, getopt
 
 def main(argv) :
@@ -57,8 +55,6 @@ def main(argv) :
 
     elif action == "use" :
         myModel = loadModel(inputfile)
-
-    plot_model(myModel, to_file='model.png')
 
 def getModel() :
 
