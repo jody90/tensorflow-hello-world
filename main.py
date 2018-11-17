@@ -44,17 +44,21 @@ def main(argv) :
     test_images = test_images / 255.0
 
     if action == "new" :
-        myModel = getModel()
-        myModel.fit(train_images, train_labels, epochs=5)
-        myModel.save(outputfile)
+        model = getModel()
+        model.fit(train_images, train_labels, epochs=5)
+        model.save(outputfile)
 
     elif action == "optimize" :
-        myModel = loadModel(inputfile)
-        myModel.fit(train_images, train_labels, epochs=5)
-        myModel.save(outputfile)
+        model = loadModel(inputfile)
+        model.fit(train_images, train_labels, epochs=5)
+        model.save(outputfile)
 
     elif action == "use" :
-        myModel = loadModel(inputfile)
+        model = loadModel(inputfile)
+
+    test_loss, test_acc = model.evaluate(test_images, test_labels)
+
+    print('Test accuracy:', test_acc)
 
 def getModel() :
 
