@@ -7,5 +7,11 @@ url = "https://pypi.org/simple"
 python_version = "3.5"
 
 [packages]
+tensorflow = "*"
+matplotlib = "*"
 
 [dev-packages]
+
+
+[scripts]
+start = "python main.py"
