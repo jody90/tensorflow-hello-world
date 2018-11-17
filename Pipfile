@@ -12,6 +12,7 @@ matplotlib = "*"
 pillow = "*"
 opencv-python = "*"
 scipy = "*"
+scikit-image = "*"
 
 [dev-packages]
 

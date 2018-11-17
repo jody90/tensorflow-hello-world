@@ -10,11 +10,22 @@ import sys, getopt
 
 from scipy import misc
 
+import skimage
+
 class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 
 fashion_mnist = keras.datasets.fashion_mnist
 
 (train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
+
+train_images_flip = np.flip(train_images,2)
+test_images_flip = np.flip(test_images,2)
+
+train_images = np.append(train_images, train_images_flip, axis=0)
+test_images = np.append(test_images, test_images_flip, axis=0)
+
+train_labels = np.append(train_labels, train_labels, axis=0)
+test_labels = np.append(test_labels, test_labels, axis=0)
 
 train_images = train_images / 255.0
 
@@ -97,20 +108,22 @@ def main(argv) :
 
         model = loadModel(inputfile)
 
-        customImage = misc.imread('sneaker_875.jpg', True)
-        # customImage = misc.imread('sneaker_28.jpg', True)
+        # customImage = misc.imread('sneaker_875.jpg', True)
+
+        # customImage = skimage.transform.resize(customImage, output.shape)
+
+        customImage = misc.imread('boot2.jpg', True)
+        # customImage = misc.imread('shoe.jpg', True)
         customImage = customImage / 255.0
 
-
-        # img = test_images[4]
-
-        # print(img.shape)
-        # print(img.dtype)
+        plt.figure()
+        plt.imshow(customImage)
+        plt.colorbar()
+        plt.grid(False)
+        plt.show()
 
         img = (np.expand_dims(customImage,0))
 
-
-        
         predictions_single = model.predict(img)
 
         plot_value_array(0, predictions_single, test_labels)
